@@ -1,0 +1,11 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        mapping = {}
+        for word in strs:
+            sorted_word = "".join(sorted(word))
+            if sorted_word not in mapping:
+                mapping[sorted_word] = []
+            mapping[sorted_word].append(word)
+        # print(mapping.values())
+        return list(mapping.values())
+        
